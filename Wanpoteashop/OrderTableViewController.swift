@@ -66,6 +66,8 @@ class OrderTableViewController: UITableViewController {
                     self.orders = dic
                     DispatchQueue.main.async {
                         self.sum()
+                        //訂單相反過來，這樣最新一筆才會在最上面
+                        self.orders.reverse()
                         self.tableView.reloadData()
                         
                     }
@@ -97,6 +99,7 @@ class OrderTableViewController: UITableViewController {
                     DispatchQueue.main.async {
                         self.sum()
                         self.tableView.reloadData()
+                        
                         
                     }
                     print("deleted = ",dic["deleted"] ?? "找不到“deleted“")
